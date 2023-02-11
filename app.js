@@ -59,18 +59,14 @@ const createTime = function(){
 }
 
 
-app.get('/', (req, res) => {
-    Chat.find(function(err, posts){
-       if(err){
+app.get('/', async function(req, res){
+    try{
+        const posts = await Chat.find().sort({_id: -1});
+        res.render('home', {posts: posts});
+    } catch (err){
         console.log(err);
-       } else{
-            
-
-           res.render('home', {posts: posts});
-       }
-    })
-})
-
+    }
+} )
 
 app.get('/about', (req, res) => {
     res.render('about');
@@ -99,9 +95,7 @@ app.post('/post', (req, res) => {
     });
 
     chatsdata.save();
-
-
-
+    
     res.redirect('/')
 })
 
@@ -137,6 +131,16 @@ app.post('/detail/:postId', async function (req, res){
     
     res.redirect(`/detail/${updateId}`);
     
+})
+
+
+app.get('/detail/:postId/admin', async function(req, res){
+    const deletePostId = req.params.postId;
+    await Chat.deleteOne({
+        "_id" : deletePostId
+    });
+    res.redirect('/')
+   
 })
 
 app.listen(PORT, () => {
