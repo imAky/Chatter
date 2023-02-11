@@ -16,8 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 mongoose.set("strictQuery", false);
-mongoose.connect(`mongodb+srv://chatter-admin:${process.env.CHAT_PASS}@chatter.gsrwsic.mongodb.net/chatterdb?retryWrites=true&w=majority`);
-
+mongoose.connect("mongodb+srv://chatter-admin:uth7cSvJxh7QhnF@chatter.gsrwsic.mongodb.net/chatterdb?retryWrites=true&w=majority");
 
 
 
@@ -61,7 +60,7 @@ app.get('/', (req, res) => {
        if(err){
         console.log(err);
        } else{
-            console.log(posts)
+            
 
            res.render('home', {posts: posts});
        }
@@ -136,6 +135,6 @@ app.post('/detail/:postId', async function (req, res){
     
 })
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
     console.log('Server is running on port 3000')
 })
