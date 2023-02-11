@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 
 mongoose.set("strictQuery", false);
-mongoose.connect("mongodb+srv://chatter-admin:uth7cSvJxh7QhnF@chatter.gsrwsic.mongodb.net/chatterdb?retryWrites=true&w=majority");
+mongoose.connect(process.env.MONGO_URI);
 
 
 
