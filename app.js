@@ -3,6 +3,9 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const ejs = require('ejs');
 const mongoose = require("mongoose");
+const PORT = process.env.PORT;
+
+
 
 
 
@@ -135,6 +138,6 @@ app.post('/detail/:postId', async function (req, res){
     
 })
 
-app.listen(process.env.PORT, () => {
+app.listen(PORT, () => {
     console.log('Server is running on port 3000')
 })
