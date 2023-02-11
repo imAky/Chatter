@@ -1,0 +1,308 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body{
+    background-color: #F5F5F5;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto Mono', monospace; 
+   
+  }
+  
+  :root{
+    --blue: red;
+  }
+
+
+  .navbar-brand {
+    font-family: 'Lobster', cursive;
+    font-size: 25px;
+    margin-left: 25px;
+   
+    
+  }
+  
+  
+  .main {
+    flex-grow: 1;
+  }
+  .content {
+    margin-top: 100px;
+    
+    
+  }
+  
+  .searchfield{
+    width: 300px;
+    position: absolute;
+    z-index: 2;
+    top: 70px;
+    right: 10px;
+    display: block;
+   
+    
+    
+  }
+
+  .hide{
+    display: none;
+  }
+  
+  form.searchbox input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 60%;
+    background: #f1f1f1;
+    
+  }
+  
+  form.searchbox button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: red;;
+    color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  form.searchbox button:hover {
+    background: rgba(255, 0, 0, 0.693);
+  }
+  
+  form.searchbox::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+  
+  .card {
+    margin-top: 25px;
+    padding: 15px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    min-height: 198px;
+    
+    border-top: 5px solid var(--blue, blue);
+    position: relattive;
+    
+  }
+  
+  /* .card-title-subtitle {
+    position: absolute;
+    top: 3px;
+    left: 0;
+    
+    
+  } */
+  
+  .card-title {
+    background-color: var(--blue, blue);
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 5px;
+    border-bottom-right-radius: 5px;
+    color: white;
+    font-family: 'Roboto Mono', monospace;
+  }
+  
+  
+  .card-subtitle {
+    font-family: 'Roboto Mono', monospace;
+    font-size: small;
+    word-spacing: -2px;
+    margin-left: 5px;
+  }
+  
+  .card-text {
+    margin-top: 30px;
+    font-family: 'Roboto Mono', monospace;
+  }
+  
+  .card-comment .fa-comment-o {
+    font-size: 25px;
+  }
+  .card-comment > a {
+    text-decoration: none;
+    color:var(--blue, blue);
+  }
+  
+  
+  .tooltip-text {
+    visibility: hidden;
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    color: white;
+    font-size: 12px;
+    background-color: #192733;
+    border-radius: 10px;
+    padding: 10px 15px 10px 15px;
+  }
+  .hover-text:hover .tooltip-text {
+    visibility: visible;
+  }
+  
+  #right {
+    top: 0;
+    left: 120%;
+  }
+  
+  #bottom {
+    top: 52px;
+    left: -7%;
+  }
+  .hover-text {
+    position: relative;
+    display: inline-block;
+    font-family: 'Roboto Mono', monospace;
+  
+    text-align: center;
+  }
+  
+  
+  @media only screen and (max-width: 380px){
+    .navbar-brand {
+        font-size: 100%;
+    }
+    .plus-btn, .search-btn, .navbar-toggler {
+        font-size: 65%;
+    }
+    .post-disclamer{
+      font-size: 2vw;
+    }
+  }
+  
+  @media only screen and (max-width: 320px){
+    .navbar-brand {
+        font-size: 3.5vw;
+    }
+
+    .plus-btn, .search-btn, .navbar-tooggler {
+        font-size: 1.5vw;
+    }
+   
+  }
+  
+
+
+.post-secret{
+  background-color: whitesmoke;
+  padding: 20px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  margin-top: 100px;
+  font-family: 'Inter', sans-serif;
+  max-width: 800px;
+}
+
+.post-disclamer{
+  font-size: 70%;
+  color: grey;
+  margin-top: 20px;
+  text-align: center;
+ font-family: 'Inter', sans-serif;
+}
+
+
+.detail {
+  max-width: 800px;
+  position: relative;
+}
+/* 
+.detail-comment{
+  display: flex;
+  
+  
+} */
+
+.inputheight {
+  width: 90%;
+  height: 30px;
+}
+.input-btn-height{
+  padding: 2px 32px;
+  text-align: center;
+
+}
+.detail-btn{
+  background-color: var(--blue);
+  color: white;
+  
+  
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+  line-height: 10px;
+    
+}
+
+.detail-btn > i {
+  font-size: 80%;
+}
+
+
+.form-heading {
+  font-weight: 900;
+}
+
+.comment-section-heading{
+  background-color: red;
+  color: white;
+  width: 100px;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.comment-section{
+  background-color: whitesmoke;
+  text-align: left;
+  padding: 10px 20px;
+  border-top: 2px solid red;
+}
+
+
+
+
+
+
+
+
+
+  footer {
+    background-color: red;
+    text-align:  center;
+    margin-top: 50px;
+    padding-top: 30px;
+    padding-bottom: 40px;
+    padding-bottom: 20px;
+   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+   /*  */

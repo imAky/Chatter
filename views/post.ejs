@@ -1,0 +1,43 @@
+<%- include('partials/header'); -%>
+
+
+    <div class="container post-secret">
+        <form action="/post" method="post">
+            <fieldset>
+                <legend class="form-heading">Submit Post</legend>
+                <hr>
+                <div class="mb-3">
+                    <label for="selecttype" class="form-label fw-bold">Choose Category</label>
+                    <select class="form-select" aria-label="Default select example" id="selecttype" name="catList"
+                        required>
+                        <option selected value="">Please choose a category</option>
+                        <option value="a dream">a dream</option>
+                        <option value="a worry">a worry</option>
+                        <option value="a lie">a lie</option>
+                        <option value="a pain">a pain</option>
+                        <option value="a truth">a truth</option>
+                        <option value="a regret">a regret</option>
+                        <option value="a random feeling">a random feeling</option>
+                        <option value="a wild experience">a wild experience</option>
+                        <option value="other">other</option>
+                    </select>
+
+                </div>
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label fw-bold">Make Post</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" maxlength="300"
+                        minlength="2" name="content" required></textarea>
+                </div>
+
+
+                <button type="submit" class="btn btn-primary mt-3">Submit</button>
+            </fieldset>
+        </form>
+        <p class="post-disclamer">Attention :- Your Post Will be automatically deleted after 7 Days.</p>
+    </div>
+
+
+
+
+
+    <%- include('partials/footer'); -%>

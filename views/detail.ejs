@@ -1,0 +1,49 @@
+<%- include('partials/header'); -%>
+
+
+
+    <div class="container detail">
+        <div class="card">
+            <div class=" card-body">
+                <div class="card-title-subtitle">
+                    <span class="card-title">
+                        <%= doc.title %>
+                    </span>
+                    <small class="card-subtitle mb-2 text-muted">
+                        <%= doc.time %>
+                    </small>
+                </div>
+
+                <p class="card-text">
+                    <%= doc.content %>
+                </p>
+
+                <form class="searchbox" action="/detail/<%=doc._id%>" method="post">
+                    <div class="card-comment detail-comment">
+                        <input type="text" placeholder="Comment.." class="inputheight" maxlength="100" required
+                            autocomplete="off" name="commentItem">
+                        <button type="submit" class="detail-btn"><i>+</i></button>
+
+                    </div>
+
+                </form>
+            </div>
+
+            <div class="comment-section-heading">
+                <span>Comments :</span>
+            </div>
+
+
+            <% doc.comments.forEach(function(comm){ %>
+                <div class="comment-section">
+                    <p>
+                        <%=comm %>
+                    </p>
+                </div>
+                <% }) %>
+
+
+        </div>
+    </div>
+
+    <%- include('partials/footer'); -%>

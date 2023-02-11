@@ -1,0 +1,43 @@
+<%- include('partials/header'); -%>
+
+
+
+    <div class="container">
+        <div class="row">
+            <% posts.forEach(function(post) { %>
+
+                <div class="col-md-3 col-lg-3">
+                    <div class="card">
+                        <div class=" card-body">
+                            <div class="card-title-subtitle">
+                                <span class="card-title">
+                                    <%= post.title %>
+                                </span>
+                                <small class="card-subtitle mb-2 text-muted">
+                                    <%= post.time %>
+                                </small>
+                            </div>
+
+                            <p class="card-text">
+                                <%= post.content %>
+                            </p>
+                            <div class="card-comment hover-text">
+                                <a href="/detail/<%=post._id%>"><i class="fa fa-comment-o" aria-hidden="true"></i><small
+                                        class="ms-1">
+                                        <%= post.comments.length %>
+                                    </small></a>
+                                <span class="tooltip-text" id="right">comment</span>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+                <% }) %>
+
+
+        </div>
+    </div>
+
+    <%- include('partials/footer'); -%>
