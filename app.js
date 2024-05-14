@@ -134,12 +134,17 @@ app.post('/detail/:postId', async function (req, res){
 })
 
 
-app.get('/detail/:postId/admin', async function(req, res){
+app.get('/detail/:postId/delete/:pass', async function(req, res){
     const deletePostId = req.params.postId;
-    await Chat.deleteOne({
-        "_id" : deletePostId
-    });
-    res.redirect('/')
+    const pass = req.params.pass;
+    if(pass==process.env.PASSWORD){
+        await Chat.deleteOne({
+            "_id" : deletePostId
+        });
+        res.redirect('/')
+    }else{
+        res.send('Enter valid password for Delete post');
+    }
    
 })
 
